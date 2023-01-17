@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL,"");
+
+    char array[50] = { 'A','b'};
+    int n = 0;
+    while (true)
+    {
+        cout << "Введите сообщение,которое будет закодированно" << endl;
+        cin >> array;
+        cout << "Введите число сдвига" << endl;
+        cin >> n;
+        for (int i = 0; i < strlen(array); i++)
+            array[i] += n;
+        cout << "Encode" << endl;
+        cout << array << endl;
+        cout << "Введите сообщение,которое будет раскодированно" << endl;
+        cin >> array;
+        cout << "Введите число сдвига" << endl;
+        cin >> n;
+        cout << "Decode: " << endl;
+        for (int i = 0; i < strlen(array); i++)
+            array[i] -= n;
+        cout << array << endl;
+    }
+    system("pause");
+    return 0;
+}
